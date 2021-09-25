@@ -4,14 +4,24 @@ specifiers:
   '@types/react': ^17.0.24
   '@types/react-dom': ^17.0.9
   '@vitejs/plugin-react': ^1.0.1
+  '@xstate/immer': ^0.2.0
+  '@xstate/inspect': ^0.5.0
+  '@xstate/react': ^1.6.1
+  immer: ^9.0.6
   react: ^17.0.2
   react-dom: ^17.0.2
   typescript: ^4.4.3
   vite: ^2.5.10
+  xstate: ^4.25.0
 
 dependencies:
+  '@xstate/immer': 0.2.0_immer@9.0.6+xstate@4.25.0
+  '@xstate/inspect': 0.5.0
+  '@xstate/react': 1.6.1_cb92b318edd97188ccd0133bae59c3ca
+  immer: 9.0.6
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
+  xstate: 4.25.0
 
 devDependencies:
   '@types/react': 17.0.24
@@ -347,6 +357,44 @@ packages:
       - supports-color
     dev: true
 
+  /@xstate/immer/0.2.0_immer@9.0.6+xstate@4.25.0:
+    resolution: {integrity: sha512-ZKwAwS84kfmN108lEtVHw8jztKDiFeaQsTxkOlOghpK1Lr7+13G8HhZZXyN1/pVkplloUUOPMH5EXVtitZDr8w==}
+    peerDependencies:
+      immer: ^8.0.1
+      xstate: ^4.9.1
+    dependencies:
+      immer: 9.0.6
+      xstate: 4.25.0
+    dev: false
+
+  /@xstate/inspect/0.5.0:
+    resolution: {integrity: sha512-AOCK513vmueAAM6bQCPrvlPdHaMH3X7AgvVr0pAYzFHvV2SBhPZCX9TQXRrOmIplqByRjb34puPUbYRjkmLHww==}
+    peerDependencies:
+      ws: ^7.3.1
+    dependencies:
+      fast-safe-stringify: 2.1.1
+    dev: false
+
+  /@xstate/react/1.6.1_cb92b318edd97188ccd0133bae59c3ca:
+    resolution: {integrity: sha512-M3b32nGhA0K3N6NrYKAMXx3dgGlLmuZfJU/EsZT04kQyVbWSiT3z7p9rdPisQyaQYFUwdqspQZ68wRNWbUkfVQ==}
+    peerDependencies:
+      '@xstate/fsm': ^1.0.0
+      react: ^16.8.0 || ^17.0.0
+      xstate: ^4.11.0
+    peerDependenciesMeta:
+      '@xstate/fsm':
+        optional: true
+      xstate:
+        optional: true
+    dependencies:
+      react: 17.0.2
+      use-isomorphic-layout-effect: 1.1.1_9b26932173ac5a93c18fc8634be19f05
+      use-subscription: 1.5.1_react@17.0.2
+      xstate: 4.25.0
+    transitivePeerDependencies:
+      - '@types/react'
+    dev: false
+
   /ansi-styles/3.2.1:
     resolution: {integrity: sha512-VT0ZI6kZRdTh8YyJw3SMbYm/u+NqfsAxEpWO0Pf9sq8/e94WxxOpPKx9FR1FlyCtOVDNOQ+8ntlqFxiRc+r5qA==}
     engines: {node: '>=4'}
@@ -437,6 +485,10 @@ packages:
     resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
     dev: true
 
+  /fast-safe-stringify/2.1.1:
+    resolution: {integrity: sha512-W+KJc2dmILlPplD/H4K9l9LcAHAfPtP6BY84uVLXQ6Evcz9Lcg33Y2z1IVblT6xdY54PXYVHEv+0Wpq8Io6zkA==}
+    dev: false
+
   /fsevents/2.3.2:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -470,6 +522,10 @@ packages:
     dependencies:
       function-bind: 1.1.1
     dev: true
+
+  /immer/9.0.6:
+    resolution: {integrity: sha512-G95ivKpy+EvVAnAab4fVa4YGYn24J1SpEktnJX7JJ45Bd7xqME/SCplFzYFmTbrkwZbQ4xJK1xMTUYBkN6pWsQ==}
+    dev: false
 
   /is-core-module/2.6.0:
     resolution: {integrity: sha512-wShG8vs60jKfPWpF2KZRaAtvt3a20OAn7+IJ6hLPECpSABLcKtFKTTI4ZtH5QcBruBHlq+WsdHWyz0BCZW7svQ==}
@@ -629,6 +685,28 @@ packages:
     hasBin: true
     dev: true
 
+  /use-isomorphic-layout-effect/1.1.1_9b26932173ac5a93c18fc8634be19f05:
+    resolution: {integrity: sha512-L7Evj8FGcwo/wpbv/qvSfrkHFtOpCzvM5yl2KVyDJoylVuSvzphiiasmjgQPttIGBAy2WKiBNR98q8w7PiNgKQ==}
+    peerDependencies:
+      '@types/react': '*'
+      react: ^16.8.0 || ^17.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+    dependencies:
+      '@types/react': 17.0.24
+      react: 17.0.2
+    dev: false
+
+  /use-subscription/1.5.1_react@17.0.2:
+    resolution: {integrity: sha512-Xv2a1P/yReAjAbhylMfFplFKj9GssgTwN7RlcTxBujFQcloStWNDQdc4g4NRWH9xS4i/FDk04vQBptAXoF3VcA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0
+    dependencies:
+      object-assign: 4.1.1
+      react: 17.0.2
+    dev: false
+
   /vite/2.5.10:
     resolution: {integrity: sha512-0ObiHTi5AHyXdJcvZ67HMsDgVpjT5RehvVKv6+Q0jFZ7zDI28PF5zK9mYz2avxdA+4iJMdwCz6wnGNnn4WX5Gg==}
     engines: {node: '>=12.2.0'}
@@ -641,3 +719,7 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
+
+  /xstate/4.25.0:
+    resolution: {integrity: sha512-qP7lc/ypOuuWME4ArOBnzaCa90TfHkjiqYDmxpiCjPy6FcXstInA2vH6qRVAHbPXRK4KQIYfIEOk1X38P+TldQ==}
+    dev: false
