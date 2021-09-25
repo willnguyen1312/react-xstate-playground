@@ -15,7 +15,10 @@ const toggleMachine = createMachine<{ data: { count: number } }>({
       on: { TOGGLE: "active" },
     },
     active: {
-      entry: assign((ctx) => ctx.data.count++),
+      entry: assign((ctx, event) => {
+        ctx.data.count++;
+        console.log(event);
+      }),
       on: { TOGGLE: "inactive" },
     },
   },
@@ -32,7 +35,13 @@ export default function App() {
 
   return (
     <div>
-      <button onClick={() => send("TOGGLE")}>
+      <button
+        onClick={() =>
+          send({
+            type: "TOGGLE",
+          })
+        }
+      >
         Click me ({active ? "✅" : "❌"})
       </button>
       <code>
