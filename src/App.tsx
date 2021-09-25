@@ -1,6 +1,6 @@
 import { createMachine } from "xstate";
 import { assign } from "@xstate/immer";
-import { useMachine } from "@xstate/react";
+import { useMachine, useInterpret, useActor } from "@xstate/react";
 
 const toggleMachine = createMachine<{ data: { count: number } }>({
   id: "toggle",
@@ -22,7 +22,9 @@ const toggleMachine = createMachine<{ data: { count: number } }>({
 });
 
 export default function App() {
-  const [state, send] = useMachine(toggleMachine, { devTools: true });
+  const actor = useInterpret(toggleMachine);
+  const [state, send] = useActor(actor);
+  // const [state, send] = useMachine(toggleMachine, { devTools: true });
   const active = state.matches("active");
   const {
     data: { count },
